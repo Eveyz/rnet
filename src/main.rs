@@ -10,13 +10,11 @@ use std::thread;
 use std::sync::{Mutex, Arc};
 
 fn main() {
-    
-    let MLPLayerConfiguration config = config::MLPLayerConfiguration::builder()
-                                                .weight_init()
-                                                .activation()
-                                                .build();
 
-    
+    let cfg = config::MLPLayerConfigurationBuilder::builder()
+                                            .activation()
+                                            .weight_init()
+                                            .build();
 
     let mut network = network::Network::initialize_network();
 
